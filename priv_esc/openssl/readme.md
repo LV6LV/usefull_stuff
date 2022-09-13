@@ -58,7 +58,7 @@ gcc -shared -o openssl-exploit-engine.so -lcrypto openssl-exploit-engine.o
 Resultant is the openssl-exploit-engine.so file.
 
 ## 4. Transfer the file to target machine
-Once you have the file, run the following, at the location of the so file.
+Once you have the file on the target machine, run the following command below.
 
 openssl req -engine <full path to openssl-exploit-engine.so file>
 
