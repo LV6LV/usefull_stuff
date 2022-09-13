@@ -23,7 +23,7 @@ sudo setcap 'cap_setuid=+ep' <full path of binary>
 ```
 
 
-If you see /usr/bin/openssl = cap_setuid+ep, we are set for success.
+If you see /usr/bin/openssl = cap_setuid+ep or /usr/bin/openssl = cap_setuid=ep , we are set for success.
 
 ## 1. Requirements (On Your System)
 We will use #include <openssl/engine.h> header in our exploit engine file. On debian based systems, use the following command to install requirements: 
@@ -66,8 +66,10 @@ Resultant is the openssl-exploit-engine.so file.
 
 ## 4. Transfer the file to target machine
 Once you have the file on the target machine, run the following command below.
-
+\*must provide full path to openssl-exploit-engine.so file. If you do not use the full path it will fail.
+```
 openssl req -engine \<full path to openssl-exploit-engine.so file\>
+```
 
 Sample output if openssl-exploit-engine.so is located in the /tmp directory
 ```
