@@ -9,7 +9,7 @@ Consider the binary /usr/bin/openssl has capabilities set as: /usr/bin/openssl =
 Is there a way to become root from a normal user by using this? 
 > yes... yes there is a way.
 
-## Search all the binaries' capibilities using: 
+## Search all the binaries' capabilities using: 
 ```
 getcap -r / 2>/dev/null.
 ```
@@ -17,12 +17,19 @@ getcap -r / 2>/dev/null.
 -r is the recursive flag
 2>/dev/null directs the standard error stream to /dev/null
 
+## To set a capability:
+```
+sudo setcap 'cap_setuid=+ep' <full path of binary>
+```
+
 
 If you see /usr/bin/openssl = cap_setuid+ep, we are set for success.
 
 ## 1. Requirements (On Your System)
-We will use #include <openssl/engine.h> header in our exploit engine file. On debian based systems, use: sudo apt-get install libssl-dev to install.
-gcc
+We will use #include <openssl/engine.h> header in our exploit engine file. On debian based systems, use the following command to install requirements: 
+```
+sudo apt-get install libssl-dev
+```
 
 ## 2. Getting The Exploit Ready
 Create a file named openssl-exploit-engine.c with contents as such:
