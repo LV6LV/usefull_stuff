@@ -66,7 +66,7 @@ Resultant is the openssl-exploit-engine.so file.
 
 ## 4. Transfer the file to target machine
 Once you have the file on the target machine, run the following command below.
-\*must provide full path to openssl-exploit-engine.so file. If you do not use the full path it will fail.
+**\* This command will fail if you do not use the full path to openssl-exploit-engine.so file.**
 ```
 openssl req -engine \<full path to openssl-exploit-engine.so file\>
 ```
