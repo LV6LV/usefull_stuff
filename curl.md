@@ -33,6 +33,9 @@ f3418a443e7d841097c714d69ec4bcb8  theirs.ico
 ## Use uploading instead, via SSH from your local machine
 
 ```
-wget -O - http://example.com/file.zip | ssh user@host 'cat >/path/to/file.zip'
+Linux:
+wget -O - http://example.com/file.zip | ssh user@host 'cat > /path/to/file.zip'
 
+Windows:
+wget -O - http://example.com/file.zip | ssh user@host 'type > C:\path\to\file.zip'
 ```
