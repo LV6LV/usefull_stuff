@@ -1,0 +1,20 @@
+#First setup ssh dynamic fwding.
+ssh user@ip -D1080
+
+# Edit the SSH configuration file using a text editor of your choice:
+nano ~/.ssh/config
+
+# Add the following lines to the file:
+Host remote-host
+  ProxyCommand socat - SOCKS4A:localhost:%h:%p,socksport=1080
+
+# In this example, replace remote-host with the hostname or IP address of the remote host you want to connect to via SSH.
+
+# Save the changes to the file and exit the text editor.
+
+# Connect to the remote host via SSH:
+ssh remote-host
+
+# This should establish an SSH connection to the remote host via the SOCKS proxy server running on localhost:1080.
+
+# Note that using a proxy server may introduce additional latency and security risks, so always make sure to follow best practices for network security and use trusted proxy servers.
