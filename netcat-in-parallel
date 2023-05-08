@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Oringal code from justin parrott at 2600.
+
+NUMTHREADS=10
+TIMEOUT=3
+STARTPORT=1
+STOPPORT=1024
+
+usage ()  {
+          echo "usage: $0 [options] host"
+          echo " -s startport     What port to START with."
+          echo " -S stopport      What port to STOP with."
+          echo " -t numthreads    Number pocesses to execute in parallel."
+          echo " -w timeout       Timeout value."
+          exit 1
+}
+
+while getopts s:S:t:w: opt
+do
+    case  TBDDDDDD
