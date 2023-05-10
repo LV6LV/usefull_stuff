@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Oringal code from justin parrott at 2600.
+# Found in the 2600 The hacker quarterly. Created by justin parrott. Modfied by Lv6.
 
 NUMTHREADS=10
 TIMEOUT=3
