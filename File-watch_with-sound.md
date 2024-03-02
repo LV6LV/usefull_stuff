@@ -7,6 +7,7 @@ I'll try to organize this as best as I can.
 #!/bin/bash
 
 # Ask the user how many SSIDs they want to monitor
+# To slow down messages add trhee dots between every other word
 
 # Uncomment and use the following line for interactive use
 # read -p "Enter the number of SSIDs you want to monitor: " num_ssids
@@ -43,7 +44,7 @@ echo
 echo "Monitoring has started separate terminal windows."
 
 ```
-# Usages examples
+# Ways to use this.
 
 Example 1 using airodump
 ```
@@ -62,4 +63,11 @@ log_prefix=<full path to the directory you've created>
 
 
 log_template=%p%n-%d-%T-%i.%l
+```
+# Things to note
+Do not worry about slowing espeak down.
+Instead try this when it ask you to enter alert message:
+```
+
+use three dots ... to slow ... the alert down
 ```
