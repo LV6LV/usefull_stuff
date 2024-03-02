@@ -1,6 +1,6 @@
 # Written by Lv6Lv
 
-I'll try to organize this as best as I can.
+Just another talking computer.
 
 ```
 
