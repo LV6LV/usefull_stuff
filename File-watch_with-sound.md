@@ -49,11 +49,11 @@ echo "Monitoring has started separate terminal windows."
 Example 1 using airodump
 ```
 airodump-ng <interface> --write <filename> --output-format csv
-
 ```
 
 Example 2 using kismet (change kismet_logging.conf)
-change the following first than run kismet
+
+Change the following first than run kismet
 ```
 log_title=LIGMA
 
