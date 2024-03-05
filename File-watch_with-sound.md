@@ -4,7 +4,6 @@ Just another talking computer.
 
 ```
 
-
 #!/bin/bash
 
 # Ask the user how many SSIDs they want to monitor
