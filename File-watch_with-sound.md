@@ -25,7 +25,7 @@ for ((i=1; i<=num_ssids; i++)); do
 
     # Prepare the monitoring command, adjusted for .csv files
     monitor_command="bash -c '\
-    files=\$(find . -type f -name \"\$file_name\"); \
+    files=\$(find . -type f -name \"\$file_name*\"); \
     while true; do \
         for file in \$files; do \
             if grep -Flwq \"$ssid\" \"\$file\"; then \
