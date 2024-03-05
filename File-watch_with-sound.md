@@ -10,10 +10,10 @@ Just another talking computer.
 # To slow down messages add trhee dots between every other word
 
 # Uncomment and use the following line for interactive use
-# read -p "Enter the number of SSIDs you want to monitor: " num_ssids
+read -p "Enter the number of SSIDs you want to monitor: " num_ssids
 
 #Set to 1 for testing, or dynamically adjust based on user input, or use the above and comment the num_ssids
-num_ssids=1 
+#num_ssids=1 
 
 for ((i=1; i<=num_ssids; i++)); do
     # Collect each SSID and the corresponding message
