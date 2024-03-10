@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Send the command to the server
-response=$(curl -s -X POST https://9rczvqn2ub.execute-api.us-east-1.amazonaws.com/execute \
+response=$(curl -s -X POST https://<API GOES HERE>.amazonaws.com/execute \
 -H "Content-Type: application/json" \
 -d '{"command":"env"}')
 
